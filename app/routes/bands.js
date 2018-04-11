@@ -1,19 +1,4 @@
 import Route from '@ember/routing/route';
-import EmberObject, { computed } from '@ember/object';
-
-var Band = EmberObject.extend({
-  name: '',
-
-  slug: computed('name', function() {
-    return this.get('name').dasherize();
-  })
-});
-
-var Song = EmberObject.extend({
-  title: '',
-  band: '',
-  rating: 0
-});
 
 export default Route.extend({
   model: function() {
