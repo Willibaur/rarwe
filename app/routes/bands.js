@@ -1,4 +1,6 @@
 import Route from '@ember/routing/route';
+import Band from '../models/band';
+import Song from '../models/song';
 
 export default Route.extend({
   model: function() {
