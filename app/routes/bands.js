@@ -33,5 +33,15 @@ export default Route.extend({
     var fooFighters = Band.create({ name: 'Foo Fighters', songs: [pretender] });
 
     return [ledZeppelin, pearlJam, fooFighters];
-  }
+  },
+
+  actions: {
+    createBand: function () {
+      var name = this.get('controller').get('name');
+      var band = Band.create({ name: name });
+
+      this.modelFor('bands').pushObject(band);
+      this.get('controller').set('name', '');
+    }
+  },
 });
