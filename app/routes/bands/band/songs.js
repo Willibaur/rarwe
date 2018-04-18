@@ -16,5 +16,12 @@ export default Route.extend({
       band.get('songs').pushObject(song);
       controller.set(title, '');
     },
+
+    updateRating: function(params) {
+      var song = params.item;
+      var rating = params.rating;
+
+      song.set('rating', rating);
+    },
   },
 });
