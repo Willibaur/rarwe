@@ -3,6 +3,12 @@ import { isEmpty } from '@ember/utils';
 import Controller from '@ember/controller';
 
 export default Controller.extend({
+  songCreationStarted: false,
+
+  canCreateSong: computed('songCreationStarted', 'model.songs.[]', function() {
+    return this.get('songCreationStarted') || this.get('model.songs.length');
+  }),
+
   title: '',
 
   isAddButtonDisabled: computed('title', function() {
@@ -10,6 +16,10 @@ export default Controller.extend({
   }),
 
   actions: {
+    enableSongCreation: function() {
+      this.set('songCreationStarted', true);
+    },
+
     updateRating: function(params) {
       var song = params.item;
       var rating = params.rating;
