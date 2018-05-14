@@ -1,17 +1,23 @@
-.page-header a h1 {
-  color: #555;
+a.star-rating {
+  color: inherit;
+  text-decoration: none;
 }
 
-.navbar-default .navbar-nav > li > a.active,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+.band-description-header {
+  margin-bottom: 20px;
 }
 
-.songs .rating {
-  color: #aaa;
-  font-size: 1.1em;
+.band-info {
+  margin-top: 20px;
+}
+
+.band-link .pointer {
+  float: right;
+  display: none;
+}
+
+.band-link.active .pointer {
+  display: block;
 }
 
 .empty-list {
@@ -25,13 +31,21 @@
   line-height: 100px;
 }
 
-.band-link .pointer {
-  float: right;
-  display: none;
+.navbar-default .navbar-nav > li > a.active,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
 }
 
-.band-link.active .pointer {
-  display: block;
+.nav-tabs > li > a.active,
+.nav-tabs > li > a.hover,
+.nav-tabs > li > a.focus, {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
 }
 
 .new-band {
@@ -51,11 +65,19 @@
   margin-left: 20px;
 }
 
+.page-header a h1 {
+  color: #555;
+}
+
+.page-header a:hover {
+  text-decoration: none;
+}
+
 .rating-panel {
   float: right;
 }
 
-a.star-rating {
-  color: inherit;
-  text-decoration: none;
+.songs .rating {
+  color: #aaa;
+  font-size: 1.1em;
 }
