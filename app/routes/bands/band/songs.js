@@ -2,6 +2,10 @@ import Route from '@ember/routing/route';
 import Song from '../../../models/song'
 
 export default Route.extend({
+  resetController(controller) {
+    controller.set('songCreationStarted', false);
+  },
+
   actions: {
     createSong: function () {
       var controller = this.get('controller');
@@ -10,7 +14,7 @@ export default Route.extend({
       var song = Song.create({ title: title, band: band });
 
       band.get('songs').pushObject(song);
-      controller.set(title, '');
+      this.get('controller').set('title', '');
     },
   },
 });

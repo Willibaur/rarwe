@@ -1,6 +1,10 @@
 <div class="panel panel-default band-panel">
   <div class="panel-body">
-    <h4 class="panel-title band-description-header">Description</h4>
-    <p>{{model.description}}</p>
+    {{#if model.description}}
+      <h4 class="panel-title band-description-header">Description</h4>
+      <p>{{model.description}}</p>
+    {{else}}
+      <h4 class="text-center">Sorry, we currently don't have more info for this band.</h4>
+    {{/if}}
   </div>
 </div>
