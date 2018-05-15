@@ -1,6 +1,7 @@
 import EmberObject, { computed } from '@ember/object';
 
 export default EmberObject.extend({
+  description: '',
   name: '',
 
   init: function() {

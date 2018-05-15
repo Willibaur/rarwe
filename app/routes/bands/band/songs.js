@@ -2,19 +2,24 @@ import Route from '@ember/routing/route';
 import Song from '../../../models/song'
 
 export default Route.extend({
-  model: function() {
-    return this.modelFor('bands.band');
+  resetController(controller) {
+    controller.set('songCreationStarted', false);
   },
 
   actions: {
-    createSong: function () {
+    didTransition() {
+      var band = this.modelFor('bands.band');
+      document.title = `${band.get('name')} songs - Rock & Roll`;
+    },
+
+    createSong() {
       var controller = this.get('controller');
       var band = this.modelFor('bands.band');
       var title = controller.get('title');
       var song = Song.create({ title: title, band: band });
 
       band.get('songs').pushObject(song);
-      controller.set(title, '');
+      controller.set('title', '');
     },
   },
 });
