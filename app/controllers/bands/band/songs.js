@@ -24,7 +24,13 @@ export default Controller.extend({
       var song = params.item;
       var rating = params.rating;
 
+      if (song.get('rating') === rating) {
+        rating = 0
+      }
+
       song.set('rating', rating);
+
+      return song.save();
     },
   }
 });
